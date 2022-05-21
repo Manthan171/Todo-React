@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import getItems from "./getLocalItems";
 import './todo.css';
 
 const Todo = () => {
     const [inputData, setInputData] = useState('');
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState(getItems());
 
     //Add items to the list
     const addItem = () => {
@@ -12,7 +13,7 @@ const Todo = () => {
         }else{
             setItems([...items ,inputData]);
             setInputData('');
-        }
+        } 
     }
 
     // Delete items
@@ -28,7 +29,12 @@ const Todo = () => {
     const editItems = (id) => {
         console.log(id);
     }
-    
+
+    useEffect(() => {
+        localStorage.setItem('todo', JSON.stringify(items));
+        console.log("first")
+    }, [items]);
+
     return(
         <>
             <div className="main-div">
@@ -40,7 +46,7 @@ const Todo = () => {
                     <div className="addItems">
                         <input type="text" placeholder="Please enter a task..." value={inputData} onChange={(e) => setInputData(e.target.value)} />
                         <i className="fa fa-list" aria-hidden="true"></i>
-                        <button onClick={addItem}>Add task</button>
+                        <button onClick={() => {addItem();}}>Add task</button>
                     </div>
                     <div className="showItems">
                         {
