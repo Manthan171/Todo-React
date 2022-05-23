@@ -5,13 +5,27 @@ import './todo.css';
 const Todo = () => {
     const [inputData, setInputData] = useState('');
     const [items, setItems] = useState(getItems());
+    const [editState , setEditState] = useState({isEdit:false , index:-1})
 
     //Add items to the list
     const addItem = () => {
         if(!inputData){
            alert('Enter a task first...');
         }else{
-            setItems([...items ,inputData]);
+            if(editState.isEdit) {
+                console.log("Edit state", editState.isEdit);
+                const currentToDOData = [...items]
+                currentToDOData[editState.index] = inputData;
+                setItems(currentToDOData);
+                setEditState({
+                    ...editState,
+                    isEdit:false,
+                    index:-1
+                })
+
+            } else {
+                setItems([...items ,inputData]);
+            }
             setInputData('');
         } 
     }
@@ -22,12 +36,21 @@ const Todo = () => {
         const updateItems = items.filter((element, index) => {
             return index !== id;
         })
+        console.log(updateItems, "Updated items");
         setItems(updateItems);
     }
 
     // Edit items
     const editItems = (id) => {
-        console.log(id);
+        setEditState({
+            ...editState,
+            isEdit:true,
+            index:id
+        })
+        setInputData(items[id]);
+        // // setItems(inputData[id].replace(inputData));
+        // console.log(inputData);
+        // console.log(id);
     }
 
     useEffect(() => {
