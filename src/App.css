@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+
+*{
+  margin: 0;
+  /* padding: 0; */
+}
+body{
+  background: rgb(34,187,212);
+  background: linear-gradient(207deg, rgba(34,187,212,1) 0%, rgba(32,201,151,1) 67%);
+  font-family: 'Roboto', sans-serif;
+  background-repeat: no-repeat;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0.5px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.root{
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 50px;
+}

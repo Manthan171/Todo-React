@@ -1,39 +1,24 @@
-*{
-    margin: 0;
-    /* padding: 0; */
-}
-body{
-    background-color: #e55c8a;
-    font-family: 'Roboto', sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 26px;
-    letter-spacing: 0.5px;
-}
-
 @font-face{
     font-family: "Roboto";
     src: url(../font/Roboto-Light.ttf);
-}
-
-@font-face{
+  }
+  
+  @font-face{
     font-family: "Poppins";
     src: url(../font/Poppins-Regular.otf);
-}
+  }
 
 .main-div{
     background-color: #3c424a;
     text-align: center;
     width: 50%;
-    margin: 50px auto 0 auto;
+    margin: 0px auto 0 auto;
     color: #fff;
     border-radius: 10px;
 }
 
 .main-div .greetingMsg{
     text-align: left;
-    padding-top: 30px;
-    padding-left: 50px;
 }
 
 .main-div .child-div{
@@ -55,19 +40,21 @@ body{
     display: flex;
 }
 
-.main-div .child-div .addItems button{
+.main-div .child-div .addItems .submitBtn{
     flex: 1;
     font-family: 'Poppins', sans-serif;
     transition: 0.2s all ease-in-out;
     font-size: 18px;
     font-weight: 700;
+    background-color: #fff !important;
+    color: #343a40 !important;
 }
 
-.main-div .child-div .addItems button:hover{
+.main-div .child-div .addItems .submitBtn:hover{
     cursor: pointer;
     border: 1px solid #fff;
-    color: #fff;
-    background: transparent;
+    color: #fff !important;
+    background: transparent !important;
 }
 
 .main-div .child-div .addItems input{
@@ -124,7 +111,7 @@ body{
 .main-div .child-div .showItems .eachItems div{
     display: flex;
     justify-content: space-between;
-    width: 30%;
+    /* width: 30%; */
 }
 
 .main-div .child-div .showItems .eachItems h3{
@@ -137,4 +124,78 @@ body{
     border: 1px solid #fff;
     color: #fff;
     background: transparent;
+}
+
+.warning{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    padding: 35px 60px;
+    border-radius: 5px;
+    background: rgb(34,187,212);
+    background: linear-gradient(207deg, rgba(34,187,212,1) 0%, rgba(32,201,151,1) 67%);
+    box-shadow: 0px 0px 10px #000;
+    position: absolute;
+    left: 39%;
+    top: 2%;
+    /* display: none; */
+}
+
+.warning .warningBtn{
+    background-color: #fff !important;
+    color: #343a40 !important;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.2s all ease-in-out;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    width: 105px;
+    border-radius: 5px;
+}
+
+.warning .warningBtn:hover{
+    cursor: pointer;
+    border: 2px solid #fff;
+    color: #fff !important;
+    background: transparent !important;
+}
+
+.toggle{
+    font-family: 'Poppins', sans-serif;
+    transition: 0.2s all ease-in-out;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    left: 39%;
+    top: 2%;
+    position: absolute;
+}
+
+.logoutMain{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.logoutMain h1{
+    flex: 2;
+    padding-left: 50px;
+}
+
+.logoutMain .logoutBtn{
+    padding-right: 30px;
+}
+
+.logoutMain button{
+    flex: 1 1;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.2s all ease-in-out;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #fff !important;
+    color: #343a40 !important;
 }
