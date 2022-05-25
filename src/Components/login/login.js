@@ -26,7 +26,6 @@ const Login = (props) => {
             <button type="submit" onClick={() => addUser()}>Login</button>
             {/* <NavLink to="/home">
             </NavLink> */}
-
         </div>
         </>
     )

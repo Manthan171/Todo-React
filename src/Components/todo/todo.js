@@ -74,7 +74,7 @@ const Todo = () => {
     const viewData = (id) => {
         const maindata = [...items];
         const viewdata = maindata[id];
-        localStorage.setItem('view', JSON.stringify(viewdata));
+        localStorage.setItem('view', JSON.stringify({currentData : viewdata ,index:id}));
         navigate("/view");
     } 
 
